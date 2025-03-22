@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌻 Girasoles para Andrea 🌻</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff8e1; /* Fondo cálido */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        h1 {
+            color: #ffcc00; /* Amarillo dorado */
+            font-size: 3rem;
+            margin-top: 20px;
+        }
+        .message {
+            font-size: 1.5rem;
+            color: #333;
+            margin-top: 20px;
+        }
+        .flower {
+            font-size: 2rem;
+            position: absolute;
+            animation: float 5s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <h1>🌻 Girasoles para Andrea 🌻</h1>
+    <div class="message">
+        <p>¡Hola, Andrea!</p>
+        <p>Estos girasoles son para ti, porque eres tan brillante y especial como el sol. Gracias por iluminar mi vida.</p>
+        <p>Con todo mi cariño, <strong>[Tu nombre]</strong>.</p>
+    </div>
+
+    <!-- Flores animadas -->
+    <div id="flowers"></div>
+
+    <script>
+        // Crear girasoles animados
+        const flowersContainer = document.getElementById("flowers");
+        const emojis = ["🌻"]; // Solo girasoles
+
+        function createFlower() {
+            const flower = document.createElement("div");
+            flower.className = "flower";
+            flower.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+            flower.style.left = Math.random() * 100 + "%";
+            flower.style.animationDuration = (Math.random() * 5 + 3) + "s";
+            flowersContainer.appendChild(flower);
+
+            // Eliminar la flor después de la animación
+            setTimeout(() => flower.remove(), 8000);
+        }
+
+        // Crear girasoles cada 500ms
+        setInterval(createFlower, 500);
+    </script>
+</body>
+</html>
